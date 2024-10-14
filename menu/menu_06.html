@@ -1,11 +1,230 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>웹디자인기능사 메뉴 유형 M-6</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹디자인기능사 메뉴 유형 M-6</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        color: inherit;
+      }
+      #wrap {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #aside {
+        width: 200px;
+      }
+      #aside h1 {
+        width: 100%;
+        height: 100px;
+        background-color: #fafafa;
+      }
+      #aside nav {
+        width: 100%;
+        height: 750px;
+        background-color: #f5f5f5;
+      }
+      #main {
+        width: calc(100% - 200px);
+      }
+      #slider {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        background-color: #efefef;
+      }
+      #slider .link {
+        width: 100px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #e2e2e2;
+      }
+      #banner {
+        width: 100%;
+        height: 200px;
+        background-color: #dbdbdb;
+      }
+      #contents {
+        width: 100%;
+        height: 250px;
+        background-color: #cfcfcf;
+      }
+      #footer {
+        width: 100%;
+        display: flex;
+      }
+      #footer .footer1 {
+        width: 20%;
+        height: 100px;
+        background-color: #c0c0c0;
+      }
+      #footer .footer2 {
+        width: 60%;
+        height: 100px;
+        background-color: #b1b1b1;
+      }
+      #footer .footer3 {
+        width: 20%;
+        height: 100px;
+        background-color: #aaaaaa;
+      }
+      /* nav */
+      .nav {
+        position: relative;
+        z-index: 1000;
+      }
+      .nav > ul > li {
+        position: relative;
+      }
+      .nav > ul > li > a {
+        padding: 10px;
+        display: block;
+        text-align: center;
+        background-color: #ccc;
+      }
+      .nav > ul > li > a:hover {
+        background-color: #dbdbdb;
+      }
+      .nav > ul > li > ul {
+        position: absolute;
+        top: 0;
+        right: -500px;
+        width: 500px;
+        display: none;
+      }
+      .nav > ul > li > ul > li {
+        display: inline;
+      }
+      .nav > ul > li > ul > li > a {
+        padding: 10px;
+        display: inline-block;
+        width: 100px;
+      }
+      .nav > ul > li > ul > li > a:hover {
+        background-color: #a2a2a2;
+      }
+      #main {
+        position: relative;
+      }
+      #main::after {
+        content: '';
+        width: 0%;
+        height: 205px;
+        background-color: #c7c7c7;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: 1;
+        transition: all 300ms;
+      }
+      #main.on::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <aside id="aside">
+        <h1></h1>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="#">메뉴1</a>
+              <ul class="submenu">
+                <li><a href="#">서브메뉴1-1</a></li>
+                <li><a href="#">서브메뉴1-2</a></li>
+                <li><a href="#">서브메뉴1-3</a></li>
+                <li><a href="#">서브메뉴1-4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메뉴2</a>
+              <ul class="submenu">
+                <li><a href="#">서브메뉴2-1</a></li>
+                <li><a href="#">서브메뉴2-2</a></li>
+                <li><a href="#">서브메뉴2-3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메뉴3</a>
+              <ul class="submenu">
+                <li><a href="#">서브메뉴3-1</a></li>
+                <li><a href="#">서브메뉴3-2</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메뉴4</a>
+              <ul class="submenu">
+                <li><a href="#">서브메뉴4-1</a></li>
+                <li><a href="#">서브메뉴4-2</a></li>
+                <li><a href="#">서브메뉴4-3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메뉴5</a>
+              <ul class="submenu">
+                <li><a href="#">서브메뉴5-1</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main id="main">
+        <article id="slider">
+          <div class="link"></div>
+        </article>
+        <article id="banner"></article>
+        <article id="contents"></article>
+      </main>
+      <footer id="footer">
+        <div class="footer1"></div>
+        <div class="footer2"></div>
+        <div class="footer3"></div>
+      </footer>
+    </div>
+
+    <!-- Jquery 버전 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $('.nav > ul > li').mouseover(function () {
+          $('.nav > ul > li > ul').stop().fadeIn(300);
+          $('#main').addClass('on');
+        });
+        $('.nav > ul > li').mouseout(function () {
+          $('.nav > ul > li > ul').stop().fadeOut(100);
+          $('#main').removeClass('on');
+        });
+      });
+    </script> -->
+
+    <!-- JS 버전 -->
+    <script>
+      window.onload = function () {
+        let navList = document.querySelector('.nav > ul');
+
+        navList.addEventListener('mouseover', function () {
+          navList.querySelectorAll('.submenu').forEach((sub) => {
+            sub.style.display = 'block';
+          });
+          document.getElementById('main').classList.add('on');
+        });
+
+        navList.addEventListener('mouseout', function () {
+          navList.querySelectorAll('.submenu').forEach((sub) => {
+            sub.style.display = 'none';
+          });
+          document.getElementById('main').classList.remove('on');
+        });
+      };
+    </script>
+  </body>
 </html>
