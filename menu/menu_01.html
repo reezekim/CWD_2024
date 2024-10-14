@@ -87,7 +87,7 @@
       }
       .nav > ul > li > a {
         display: inline-block;
-        padding: 10px 50px;
+        padding: 10px 40px;
         background-color: #b0b0b0;
       }
       .nav > ul > li > a:hover {
@@ -95,7 +95,7 @@
       }
       .nav > ul > li > ul {
         position: absolute;
-        top: 40px;
+        top: 41px;
         left: 0;
         width: 100%;
         text-align: center;
@@ -112,6 +112,14 @@
       .nav > ul > li > ul > li > a:hover {
         background-color: #8f8f8f;
       }
+      /* 자바스크립트용 CSS */
+      .nav > ul > li > ul {
+        display: block;
+        height: 0;
+        /* height: 166px; */
+        overflow: hidden;
+        transition: all 600ms;
+      }
     </style>
   </head>
   <body>
@@ -122,7 +130,7 @@
           <ul>
             <li>
               <a href="#">메뉴1</a>
-              <ul>
+              <ul class="submenu">
                 <li><a href="#">서브메뉴1-1</a></li>
                 <li><a href="#">서브메뉴1-2</a></li>
                 <li><a href="#">서브메뉴1-3</a></li>
@@ -131,7 +139,7 @@
             </li>
             <li>
               <a href="#">메뉴2</a>
-              <ul>
+              <ul class="submenu">
                 <li><a href="#">서브메뉴2-1</a></li>
                 <li><a href="#">서브메뉴2-2</a></li>
                 <li><a href="#">서브메뉴2-3</a></li>
@@ -140,7 +148,7 @@
             </li>
             <li>
               <a href="#">메뉴3</a>
-              <ul>
+              <ul class="submenu">
                 <li><a href="#">서브메뉴3-1</a></li>
                 <li><a href="#">서브메뉴3-2</a></li>
                 <li><a href="#">서브메뉴3-3</a></li>
@@ -149,7 +157,7 @@
             </li>
             <li>
               <a href="#">메뉴4</a>
-              <ul>
+              <ul class="submenu">
                 <li><a href="#">서브메뉴4-1</a></li>
                 <li><a href="#">서브메뉴4-2</a></li>
                 <li><a href="#">서브메뉴4-3</a></li>
@@ -174,5 +182,37 @@
         <div class="footer3"></div>
       </div>
     </div>
+
+    <!-- Jquery 버전 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- <script>
+      $(document).ready(function () {
+        $('.nav > ul > li').mouseover(function () {
+          $(this).find('.submenu').stop().slideDown(200);
+        });
+        $('.nav > ul > li').mouseout(function () {
+          $(this).find('.submenu').stop().slideUp(200);
+        });
+      });
+    </script> -->
+
+    <!-- Javascript 버전 -->
+    <script>
+      window.onload = function () {
+        let navList = document.querySelectorAll('.nav > ul > li');
+        console.log('navList');
+
+        navList.forEach(function (navItem) {
+          navItem.addEventListener('mouseover', function () {
+            this.querySelector('.submenu').style.height = '166px';
+          });
+        });
+        navList.forEach(function (navItem) {
+          navItem.addEventListener('mouseout', function () {
+            this.querySelector('.submenu').style.height = '0px';
+          });
+        });
+      };
+    </script>
   </body>
 </html>
