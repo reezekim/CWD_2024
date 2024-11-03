@@ -28,3 +28,300 @@ body {
   background-color: #fff;
   color: #333;
 }
+
+#wrap {
+  position: relative;
+}
+/* 헤더 */
+header {
+  height: 100px;
+  background-color: #0070be;
+}
+header .inner {
+  width: 1200px;
+  margin: auto;
+  height: 100%;
+  padding-top: 30px;
+  position: relative;
+}
+nav {
+  position: absolute;
+  top: 59px;
+  right: 0;
+  z-index: 10;
+}
+nav > ul {
+  display: flex;
+}
+nav > ul > li > a {
+  display: block;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+nav > ul > li:hover > a {
+  background: #737373;
+}
+.sub {
+  height: 155px;
+  background: #fff;
+  display: none;
+}
+.sub a {
+  display: block;
+  width: 150px;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  background-color: #fff;
+}
+.sub a:hover {
+  background-color: #0070be;
+  color: #fff;
+}
+/* 슬라이드 */
+#slider {
+  position: relative;
+  margin: auto;
+  width: 1200px;
+  height: 300px;
+  overflow: hidden;
+}
+#slider ul {
+  width: 3600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#slider ul li {
+  width: 1200px;
+  height: 300px;
+  float: left;
+  position: relative;
+}
+#slider ul li.s1 {
+  background: url(../images/img1.jpg) no-repeat center/cover;
+}
+#slider ul li.s2 {
+  background: url(../images/img2.jpg) no-repeat center/cover;
+}
+#slider ul li.s2 h2 {
+  color: #fff;
+  text-shadow: 5px 5px 6px #202020;
+}
+#slider ul li.s3 {
+  background: url(../images/img3.jpg) no-repeat center/cover;
+}
+#slider ul li h2 {
+  color: #0070be;
+  text-shadow: 5px 5px 6px #fff;
+  font-size: 35px;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+/* 컨텐츠 */
+#contents {
+  display: flex;
+  margin: auto;
+  width: 1200px;
+  height: 200px;
+}
+#contents article {
+  width: 400px;
+}
+.cont1 {
+  position: relative;
+}
+.cont1 .tabmenu > li {
+  width: 150px;
+  display: inline-block;
+  background-color: #d6edfd;
+}
+.cont1 .tabmenu > li > a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+}
+.cont1 .tabmenu li.on {
+  background: #0066ad;
+  color: #fff;
+}
+.cont1 .tabcon {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background-color: #0066ad;
+  padding: 10px;
+  height: 150px;
+}
+.cont1 .gall {
+  display: none;
+}
+.notice table th {
+  text-align: left;
+  color: #fff;
+}
+.notice table td {
+  color: #fff;
+}
+.notice table tr {
+  border-bottom: 1px dashed #fff;
+}
+.notice table a {
+  padding: 5px;
+  display: block;
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gall ul {
+  text-align: center;
+  padding-top: 30px;
+}
+.gall ul li {
+  display: inline-block;
+}
+.gall ul li a {
+  display: block;
+  width: 120px;
+  height: 70px;
+  overflow: hidden;
+}
+.gall ul li a > img {
+  width: 100%;
+}
+.cont2 {
+  padding: 10px;
+}
+.cont2 > h2 {
+  color: #0066ad;
+  margin-bottom: 10px;
+}
+.cont2 a {
+  display: block;
+  height: 130px;
+  background: url(../images/banner.jpg) center/cover;
+  border-radius: 30px;
+  overflow: hidden;
+  color: #fff;
+}
+.cont2 div {
+  height: 100%;
+  padding: 20px;
+  background: rgba(0, 112, 190, 0.5);
+}
+.cont2 div h2 {
+  margin-bottom: 10px;
+  color: #ff0;
+}
+.cont2 div h2 span {
+  font-weight: 300;
+}
+.cont2 p {
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+}
+.cont3 {
+  padding: 10px;
+}
+.cont3 > h2 {
+  color: #0066ad;
+  margin-bottom: 10px;
+}
+.cont3 ul {
+  text-align: center;
+}
+.cont3 ul li:first-child {
+  margin-left: 0;
+}
+.cont3 ul li {
+  display: inline-block;
+  margin-left: 20px;
+  text-align: center;
+}
+.cont3 ul li a {
+  display: block;
+  height: 100%;
+}
+.cont3 ul li p {
+  width: 80px;
+  height: 80px;
+  background-color: #0066ad;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+.cont3 ul li p img {
+  height: 100%;
+}
+.cont3 ul li span {
+  margin-top: 10px;
+  font-weight: bold;
+  display: block;
+}
+/* 푸터 */
+footer {
+  height: 100px;
+  background-color: #0070be;
+}
+footer .inner {
+  display: flex;
+  margin: auto;
+  width: 1200px;
+  height: 100%;
+  align-items: center;
+  padding-left: 20px;
+}
+footer .flogo {
+  margin-right: 50px;
+}
+footer .fmenu li {
+  float: left;
+  border-right: 1px solid #fff;
+  margin-right: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+footer .fmenu li:last-child {
+  border-right: 0;
+}
+footer .copy {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
+}
+/* 팝업창 */
+.popup {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  text-align: center;
+  z-index: 9999;
+  padding: 20px;
+  border: 2px solid #0066ad;
+  border-radius: 20px;
+  display: none;
+}
+.popup h2 {
+  color: #0066ad;
+  margin-bottom: 20px;
+}
+.popup img {
+  margin-bottom: 20px;
+}
+.popup .text {
+  margin: 20px 0;
+}
+.popup .btn {
+  text-align: right;
+}
