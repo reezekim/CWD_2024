@@ -1,0 +1,47 @@
+$(function () {
+  // 슬라이드
+  var i = 0;
+
+  function slide() {
+    if (i < 2) {
+      i++;
+    } else {
+      i = 0;
+    }
+    $('.slide ul').animate({ top: -1 * 400 * i }, 1000);
+  }
+
+  setInterval(slide, 2000);
+
+  // 탭메뉴
+  var t = 0;
+  $('.tabmenu li').click(function () {
+    $('.tabmenu li').removeClass('on');
+    $(this).addClass('on');
+
+    t = $(this).index();
+
+    $('.tabcon').hide();
+    $('.tabcon').eq(t).show();
+
+    return false;
+  });
+
+  // 팝업창
+  $('.pp').click(function () {
+    $('.popcon').show();
+    return false;
+  });
+
+  $('button').click(function () {
+    $('.popcon').hide();
+  });
+
+  // 네비
+  $('nav>ul>li').mouseenter(function () {
+    $(this).find('.sub').stop().slideDown();
+  });
+  $('nav>ul>li').mouseleave(function () {
+    $('.sub').stop().slideUp();
+  });
+});
